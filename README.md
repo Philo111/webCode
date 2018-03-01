@@ -1,2 +1,2 @@
 # webCode
-小 feature
+小 features
