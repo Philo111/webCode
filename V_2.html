@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../other/vue.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <p>{{cont}}</p>
+        小明的年龄是{{age}}
+        <p :title="message">aaaaa</p>
+    </div>
+    <script>
+        new Vue({
+            el:'#app',
+            data:{
+                cont:'我是一个兵',
+                age : 28,
+                message:'目前的时间是' + new Date().toLocaleString()
+            }
+        })
+    </script>
+</body>
+</html>

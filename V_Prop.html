@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../other/vue.min.js"></script>
+</head>
+<body>
+<!--理清vue实例message，input中placeholder、v-model、value属性-->
+    <div id="div1">
+        <label for="input_1"></label>
+        <!--v-model 和 placeholder冲突的问题怎么解决-->
+        <input id="input_1" placeholder='请输入' v-model="message">
+        <p>消息是：{{message}}</p>
+    </div>
+    <script>
+        new Vue({
+            el:'#div1',
+            data: {
+                message: '我是一个兵'
+            },
+            directives:{       //注册局部指令
+                focus: {
+                    inserted:function(el){
+                        el.focus()
+                    }
+                }
+            }
+        })                    //差半个小括号没写！！！
+    </script>
+</body>
+</html>

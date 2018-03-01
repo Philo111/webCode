@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../other/vue.min.js"></script>
+    <script src="../other/vue_router.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h1>Hello App!!!</h1>
+        <p>
+            <!-- 使用 router-link 组件来导航. -->
+            <!-- 通过传入 `to` 属性指定链接. -->
+            <!-- <router-link> 默认会被渲染成一个 `<a>` 标签 -->
+            <router-link to="/foo">Go to Foo</router-link>
+            <!--为何 to 属性不被允许？-->
+            <router-link to="/bar">Go to Bar</router-link>
+        </p>
+        <router-view></router-view>
+    </div>
+    <script>
+        <!--1、定义（路由）组件-->
+        const Foo = {template:'<div>foo</div>'};         //这个组件的定义为何不是 component，而是 const 。
+        const Bar = {template:'<div>bar</div>'};
+//      2、定义路由
+        const routes =[                            //路由是 routes ，路由实例是 router 、Vuerouter() 。
+            {path:'/foo',component:Foo},
+            {path:'/bar',component:Bar}
+        ];
+//      3、创建Router实例，然后传‘Routes’配置
+        const router = new Vuerouter({
+            routes:routes
+        });
+//      4、创建和挂载根实例
+        const app = new Vue({router}).$mount("#app")
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../other/vue.min.js"></script>
+
+</head>
+<body>
+    <div id="app">
+        <H1>我在练习Vue</H1>
+        <P>{{cont}}</P>
+        <P>编程需要不断地动手</P>
+        小明今年<span>{{age}}</span>了 <br>
+        地址是 {{address}} <br>
+        <label for="addr">请输入地址</label> <input type="text" id="addr" v-model="address">
+    </div>
+
+    <!-- JavaScript 代码需要放在尾部（指定的HTML元素之后） -->
+    <script>
+        <!--View-->
+        var exampleData = {
+            cont:'我是一个兵',
+            age:28,
+            address:'北京市'    //这是设置初始数据
+        };
+
+//ViewModel
+        new Vue({
+           el:'#app',
+           data:exampleData
+        });
+    </script>
+
+</body>
+</html>

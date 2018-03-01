@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../other/vue.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <ol>
+            <!-- v-for 可以遍历数组、迭代对象、迭代整数 -->
+            <!-- v-for 可以有三个参数，" (value, key, index) in Object " -->
+            <li v-for="site in sites">
+                {{site.name}}
+            </li>
+        </ol>
+    </div>
+    <script>
+        <!--注意 data 中数组的写法 首先是对象{}，里边是数组名，后边是[]。-->
+        new Vue({
+            el:'#app',
+            data:{
+                sites:[
+                    {name:'beijing'},
+                    {name:'shanghai'},
+                    {name:'guangzhou'}
+                ]
+            }
+        })
+    </script>
+</body>
+</html>
